@@ -1,0 +1,13 @@
+import java.util.Scanner;
+public class SpiralRunner {
+    public static void main(String args[])
+    {
+        Scanner input = new Scanner(System.in);
+        while(input.hasNextInt())
+        {
+            int num = input.nextInt();
+            Spiral s = new Spiral(num);
+            s.commence();
+        }
+    }
+}
