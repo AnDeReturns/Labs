@@ -1,0 +1,48 @@
+import static java.lang.System.*;
+public class Spiral
+{
+    private int num;
+    public Spiral(int num)
+    {
+        this.num = num;
+    }
+    public void commence()
+    {
+        int[][] arr = new int[num][num];
+        int x = 1;
+        int lim = 0;
+        if(num>0)
+        {
+            while(x<=num*num)
+            {
+                for(int a = lim; a < num-lim; a++)
+                {
+                    arr[a][lim] = x;
+                    x++;
+                }
+                for(int b = 1+lim; b < num-lim; b++)
+                {
+                    arr[num-lim-1][b] = x;
+                    x++;
+                }
+                for(int c = num-lim-2; c >= lim; c--)
+                {
+                    arr[c][num-lim-1] = x;
+                    x++;
+                }
+                for(int d = num-lim-2; d > lim; d--)
+                {
+                    arr[lim][d] = x;
+                    x++;
+                }
+                lim++;
+            }
+        }
+        for(int i = 0; i<num; i++)
+        {
+            for(int j = 0; j<num; j++)
+                out.print(arr[i][j]+"\t");
+            out.println();
+        }
+    }
+}
