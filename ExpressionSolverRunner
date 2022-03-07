@@ -1,0 +1,15 @@
+import java.util.Scanner;
+import java.io.*;
+public class ExpressionSolverRunner {
+    public static void main(String args[]) throws IOException
+    {
+        Scanner input = new Scanner(new File("ExpressionSolver.txt"));
+        while(input.hasNextLine())
+        {
+            String str = input.nextLine();
+            String[] arr = str.split(" ");
+            ExpressionSolver x = new ExpressionSolver(arr);
+            System.out.println(str+" = "+x.solve());
+        }
+    }
+}
